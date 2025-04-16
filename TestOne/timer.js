@@ -7,9 +7,15 @@ let countdownInterval = null;
 let isPaused = false;
 let targetTime = null;
 
+
 function updateDisplay(hours, minutes, seconds) {
     timeDisplay.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
+flatpickr("#target-datetime", {
+    enableTime: true,
+    dateFormat: "Y-m-d h:i K", // 格式為 yyyy-mm-dd hh:mm AM/PM
+    time_24hr: false // 使用 12 小時制
+});
 
 function calculateRemainingTime() {
     const now = new Date();
@@ -31,19 +37,20 @@ function calculateRemainingTime() {
 
 function startTimer() {
     if (!targetDatetimeInput.value) {
-        alert('請設定目標日期及時間');
+        alert('請選擇目標日期及時間');
         return;
     }
 
     targetTime = new Date(targetDatetimeInput.value);
 
-    if (targetTime <= new Date()) {
-        alert('目標時間已過，請重新設定');
-        return;
+    if (isPaused) {
+        countdownInterval = setInterval(calculateRemainingTime, 1000);
+        isPaused = false;
+        startPauseBtn.textContent = '暫停';
+    } else {
+        countdownInterval = setInterval(calculateRemainingTime, 1000);
+        startPauseBtn.textContent = '暫停';
     }
-
-    startPauseBtn.textContent = '暫停';
-    countdownInterval = setInterval(calculateRemainingTime, 1000);
 }
 
 function pauseTimer() {
