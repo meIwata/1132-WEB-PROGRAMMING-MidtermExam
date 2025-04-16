@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計時器</title>
+    <link rel="stylesheet" href="timer.css">
+</head>
+<body>
+<div class ="container">
+    <h1>計時器</h1>
+    <div id="time-display">00:00:00</div>
+    <div class="controls">
+    <label for="target-datetime">設定目標日期及時間</label>
+    <input type="datetime-local" id="target-datetime" placeholder="yyyy-mm-dd --:--">
+    <button id="start-pause-btn">開始</button>
+    <button id="reset-btn">重置</button>
+    </div>
+</div>
+<script src="timer.js"></script>
+</body>
+</html>
