@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.buttons {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons button {
+    width: 100px;
+    height: 30px;
+    margin-right: 5px;
+    border-radius: 20px;
+    border: none; /* 移除外邊框 */
+}
+
+.buttons button:active,
+.buttons button:focus {
+    background-color: #2ba589; /* 綠色 */
+    color: white;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 30px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 300px;
+    height: auto;
+    box-shadow: 5px 2px 8px rgba(0, 0, 0, 0.2); /* 添加陰影效果 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 把陰影效果也加入過渡 */
+}
+
+.gallery img:hover {
+    transform: scale(1.1); /* 縮放至 1.1倍 */
+    box-shadow: none; /* 移除陰影 */
+}
+
+.hidden {
+    display: none;
+}
