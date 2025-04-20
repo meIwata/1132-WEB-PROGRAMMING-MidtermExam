@@ -10,7 +10,10 @@
         }
 
         .buttons {
+            display: flex;
             margin-bottom: 20px;
+            align-items: center;
+            justify-content: center;
         }
 
         .buttons button {
@@ -18,13 +21,15 @@
             height: 30px;
             margin-right: 5px;
             border-radius: 20px;
-
         }
 
         .gallery {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+
+            align-items: center;
+            justify-content: center;
         }
 
         .gallery img {
@@ -39,11 +44,12 @@
 </head>
 <body>
 
-<div class="buttons">
-    <button onclick="filterImages('all')">全部圖片</button>
-    <button onclick="filterImages('nature')">自然風景圖</button>
-    <button onclick="filterImages('city')">城市風景圖</button>
-</div>
+    <div class="buttons">
+        <button onclick="filterImages('all')">全部圖片</button>
+        <button onclick="filterImages('nature')">自然風景圖</button>
+        <button onclick="filterImages('city')">城市風景圖</button>
+    </div>
+
 
 <div class="gallery">
     <!-- 自然風景圖 -->
@@ -51,12 +57,13 @@
     <img src="https://placeholder.pics/svg/400x300/DEDEDE/555555/02%20自然風景圖" alt="02自然風景圖" class="nature">
     <img src="https://placeholder.pics/svg/400x300/DEDEDE/555555/03%20自然風景圖" alt="03自然風景圖" class="nature">
     <img src="https://placeholder.pics/svg/400x300/DEDEDE/555555/04%20自然風景圖" alt="04自然風景圖" class="nature">
+    <img src="https://placeholder.pics/svg/400x300/DEDEDE/555555/05%20自然風景圖" alt="05自然風景圖" class="nature">
 
     <!-- 城市風景圖 -->
     <img src="https://placeholder.pics/svg/400x300/DEDEDE/555555/01%20城市風景圖" alt="01城市風景圖" class="city">
     <img src="https://placeholder.pics/svg/400x300/DEDEDE/555555/02%20城市風景圖" alt="02城市風景圖" class="city">
     <img src="https://placeholder.pics/svg/400x300/DEDEDE/555555/03%20城市風景圖" alt="03城市風景圖" class="city">
-    <img src="https://placeholder.pics/svg/400x300/DEDEDE/555555/04%20城市風景圖" alt="04城市風景圖" class="city">
+
 </div>
 
 <script>
